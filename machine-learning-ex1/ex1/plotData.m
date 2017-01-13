@@ -29,6 +29,9 @@ ylabel('Revenue in 10,000s');
 
 x_low = 4;
 x_high = 25;
-axis([x_low x_high])
+y_low = -5;
+y_high = 25;
+
+axis([x_low x_high y_low y_high])
 
 end
