@@ -62,11 +62,12 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+theta_vec = {Theta1, Theta2};
 
-
-
-
-
+for theta = theta_vec
+    %h_theta = sigmoid(X * theta)
+    %J = 1/m * ((-y' * log(h_theta)) - ((1 - y)' * log(1 - h_theta)));
+end
 
 
 
