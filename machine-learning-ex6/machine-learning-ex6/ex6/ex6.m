@@ -143,8 +143,29 @@ load('ex6data3.mat');
 
 % Train the SVM
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
+
+%parameter_val = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
+
+% use for loop to test values of C and alpha
+%min_error = 1;
+%for i = parameter_val
+%  for j = parameter_val
+%    model= svmTrain(X, y, i, @(x1, x2) gaussianKernel(x1, x2, j));
+%    predictions = svmPredict(model, Xval);
+%    current_error = mean(double(predictions ~= yval));
+%    if current_error < min_error
+%      min_error = current_error;
+%      C = i;
+%      sigma = j;
+%    end
+%  end
+%end 
+
+%[C, sigma, min_error]
+
+% Check yval with ypred. Pick value of C and alpha that minimize loss?
+
 visualizeBoundary(X, y, model);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-
