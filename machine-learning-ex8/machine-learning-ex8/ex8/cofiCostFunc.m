@@ -17,6 +17,8 @@ J = 0;
 X_grad = zeros(size(X));
 Theta_grad = zeros(size(Theta));
 
+
+
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost function and gradient for collaborative
 %               filtering. Concretely, you should first implement the cost
@@ -41,13 +43,23 @@ Theta_grad = zeros(size(Theta));
 %
 
 
+h_x = X * Theta' - Y;
+
+J = (1/2) * sum(sum((h_x.^2).*R));
 
 
 
+X_grad = (h_x.*R)*Theta;
 
+Theta_grad = ((h_x.*R)'*X);
 
-
-
+% for i = 1:num_users
+	% idx = find(R(:, i) == 1);
+	% X_ = X(idx, :);
+	% Y_ = Y(idx, i);
+	
+	% Theta_grad(i, :) = (X() * Theta_' - Y_) * X_;
+% end
 
 
 
